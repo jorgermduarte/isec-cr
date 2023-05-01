@@ -59,30 +59,54 @@ function simpleCalculator
         if isempty(img)
             resultText.Value = 'No image selected or drawn.';
         else
-            % Pré-processar a imagem e classificar os componentes da expressão
-            result = preprocessAndClassify(img, net);
+            % Pré-processar a imagem e extrair os símbolos
+            symbols = extractSymbols(img);
+            
+            % Classificar os símbolos usando a rede neural
+            classifiedSymbols = cell(1, numel(symbols));
+            for i = 1:numel(symbols)
+                symbol = symbols{i};
+                symbol = imresize(symbol, [150 150]);
+                classLabel = classify(net, symbol);
+                classifiedSymbols{i} = char(classLabel);
+            end
+            
+            % Interpretar a expressão classificada e calcular o resultado
+            expression = strjoin(classifiedSymbols, '');
+            result = num2str(eval(expression));
             resultText.Value = sprintf('Result: %s', result);
         end
     end
 
+    
     function symbols = extractSymbols(img)
         % Inverter a imagem, se necessário (garantir que os símbolos sejam brancos e o fundo seja preto)
         if mean(img(:)) > 0.5
             img = imcomplement(img);
         end
         
+        % Binarizar a imagem usando binarização adaptativa
+        T = adaptthresh(img, 0.5, 'ForegroundPolarity', 'dark');
+        img = imbinarize(img, T);
+        
         % Detectar regiões da imagem
-        regions = regionprops(img, 'BoundingBox');
+        regions = regionprops(img, 'BoundingBox', 'Area');
+        
+        % Filtrar regiões menores (por exemplo, menores que 50 pixels)
+        minArea = 50;
+        regions = regions([regions.Area] >= minArea);
         
         % Extrair símbolos das regiões
         symbols = cell(1, numel(regions));
         for i = 1:numel(regions)
             boundingBox = regions(i).BoundingBox;
-            x = floor(boundingBox(1));
-            y = floor(boundingBox(2));
+            x = max(floor(boundingBox(1)), 1);
+            y = max(floor(boundingBox(2)), 1);
             w = ceil(boundingBox(3));
             h = ceil(boundingBox(4));
-            symbol = img(y:y+h-1, x:x+w-1);
+            x_end = min(x+w-1, size(img, 2));
+            y_end = min(y+h-1, size(img, 1));
+            symbol = img(y:y_end, x:x_end);
             symbols{i} = symbol;
         end
         
@@ -123,6 +147,7 @@ function simpleCalculator
     identifyButton = uibutton(fig, 'push', 'Text', 'Identify', ...
         'Position', [390 170 100 30], 'ButtonPushedFcn', @identifyExpression);
     
+
     function identifyExpression(src, event)
         if isempty(img)
             resultText.Value = 'No image selected or drawn.';
@@ -144,7 +169,6 @@ function simpleCalculator
             resultText.Value = sprintf('Identified Expression: %s', expression);
         end
     end
-
 
 
     function drawImage(src, event)
