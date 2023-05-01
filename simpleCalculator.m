@@ -3,11 +3,11 @@ function simpleCalculator
     fig = uifigure('Name', 'Simple Calculator', 'Position', [300 300 500 400]);
     
     % Carregar a rede treinada
-    trainedNet = load('models/trainedNet.mat');
+    trainedNet = load('models/trained-model-5.mat');
     net = trainedNet.net;
     
     % Adicionar etiqueta para mostrar o modelo de rede atual
-    modelLabel = uilabel(fig, 'Text', 'Current model: trainedNet', 'Position', [10 365 200 20]);
+    modelLabel = uilabel(fig, 'Text', 'Current model: trained-model-5', 'Position', [10 365 200 20]);
     
     % Adicionar botão para carregar outro modelo
     loadModelButton = uibutton(fig, 'push', 'Text', 'Load Model', ...
