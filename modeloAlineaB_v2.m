@@ -5,8 +5,13 @@ addpath("models");
 
 %  === CONFIGURAÇÕES INICIAIS ===
 
-tipoTreino = 'mix'; % numeros e operadoes
-%tipoTreino = 'op'; % só operadores
+% Escolher a pasta
+dirImg = 'start';
+%dirImg = 'train1';
+%dirImg = 'custom';
+
+%tipoTreino = 'mix'; % numeros e operadoes
+tipoTreino = 'op'; % só operadores
 %tipoTreino = 'mun'; % só numeros
 
 % Casos de Teste
@@ -21,16 +26,15 @@ numRepeticoesModelo = 2; % TODO: Alterar para 10
 
 % ===============================
 
-
 % Path to the data folder
-dataDir = fullfile('data', 'datasets', 'start');
+dataDir = fullfile('data', 'datasets', dirImg);
 
 % Load the training data
-if(tipoTreino == 'mix')
+if strcmp(tipoTreino, 'mix')
     categories = {'0','1','2','3','4','5','6','7','8','9','add','sub','mul','div'};
-elseif(tipoTreino == 'op')
+elseif strcmp(tipoTreino, 'op')
     categories = {'add','sub','mul','div'};
-elseif(tipoTreino == 'mun')
+elseif strcmp(tipoTreino, 'mun')
     categories = {'0','1','2','3','4','5','6','7','8','9'};
 end
 
@@ -137,10 +141,16 @@ for i = 1:numel(arrayModelos)
         accuracyValues(repetition) = accuracy;
         accuracyTesteValues(repetition) = accuracyTeste;
 
-
-        % Gravar o treino por or
+        % Gravar o treino
         filename = [num2str(fix(accuracy)), '_', num2str(fix(accuracyTeste)), '.mat'];
-        file = fullfile('trains/',  + tipoTreino, filename);
+        folder = fullfile('trains', tipoTreino, dirImg);
+        
+        % Verificar se o diretório de destino existe
+        if ~isfolder(folder)
+            mkdir(folder);
+        end
+        
+        file = fullfile(folder, filename);
         save(file, 'net');
 
         resultsCell(end+1, :) = {file, modeloTreino.numCamadas, mat2str(modeloTreino.numNeuronios), strjoin(modeloTreino.funcoesAtivacao, ' '), modeloTreino.funcaoDeTreino, modeloTreino.epochs, modeloTreino.divisaoFuncao, modeloTreino.divisaoValores{1}, modeloTreino.divisaoValores{2}, modeloTreino.divisaoValores{3}, accuracy, accuracyTeste};
@@ -157,7 +167,7 @@ end
 % Salvar a tabela como um arquivo CSV
 results = cell2table(resultsCell, 'VariableNames', {'FileName' 'NumberLayres', 'NumberNeurons', 'ActivationFunctions', 'TrainingFunction', 'Epochs', 'Division', 'TrainRatio', 'ValRatio', 'TestRatio', 'Accuracy' , 'TestAccuracy'});
 
-folder = fullfile('results', tipoTreino);
+folder = fullfile('results', tipoTreino, dirImg);
 filename = fullfile(folder, 'results.csv');
 writetable(results, filename, 'Delimiter', ';', 'WriteMode', 'append');
 
