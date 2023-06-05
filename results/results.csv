@@ -1,0 +1,4 @@
+NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+1;10;purelin purelin;trainlm;1000;dividerand;0.7;0.15;0.15;57.8571428571429;13.6363636363636
+2;[5 5];tansig purelin tansig;trainlm;1000;dividerand;0.7;0.15;0.15;46.4285714285714;4.54545454545455
+2;[10 10];tansig purelin tansig;trainlm;1000;dividerand;0.7;0.15;0.15;78.5714285714286;22.7272727272727
