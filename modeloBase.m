@@ -1,4 +1,8 @@
 clc
+% NOTA:
+% Link para o resultado dos testes
+% https://docs.google.com/spreadsheets/d/1rKe6r9gZoh5qDY_HqCpaInfHkUEMWdhi6f2axzcQZGw/edit?usp=sharing
+
 % Path to the data folder
 dataDir = fullfile('data', 'datasets', 'start');
 
