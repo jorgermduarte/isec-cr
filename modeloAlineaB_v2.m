@@ -19,16 +19,17 @@ tipoTreino = 'mix'; % numeros e operadoes
 arrayModelos = [];
 
 % O número e dimensão das camadas encondidas influencia o desempenho?
+arrayModelos = [arrayModelos, ModeloTreino(0, 1, [10], {'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(1, 2, [5 5], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(2, 2, [10 1], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(3, 2, [1 10], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(4, 2, [10 10], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
-arrayModelos = [arrayModelos, ModeloTreino(5, 2, [30 30], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
+% arrayModelos = [arrayModelos, ModeloTreino(5, 2, [20 20], {'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(6, 3, [5 5 5], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(7, 3, [10 1 1], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(8, 3, c[1 10 1], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
 % feito - arrayModelos = [arrayModelos, ModeloTreino(9, 3, [10 10 10], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
-% arrayModelos = [arrayModelos, ModeloTreino(10, 3, [10 5 10], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
+% feito - arrayModelos = [arrayModelos, ModeloTreino(10, 3, [10 5 10], {'tansig', 'tansig', 'tansig', 'pureline'}, 'trainlm', 1000, 'dividerand', {.70, .15, .15})];
  
 %A função de treino influencia o desempenho?
 %arrayModelos = [arrayModelos, ModeloTreino(2, 2, [10 1], {'tansig', 'tansig', 'pureline'}, 'traingd', 1000, 'dividerand', {.70, .15, .15})];
