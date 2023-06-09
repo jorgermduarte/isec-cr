@@ -1,5 +1,6 @@
 classdef ModeloTreino
     properties
+        id
         numCamadas
         numNeuronios
         funcoesAtivacao
@@ -10,8 +11,9 @@ classdef ModeloTreino
     end
     
     methods
-        function obj = ModeloTreino(numCamadas, numNeuronios, funcoesAtivacao, funcaoDeTreino, epochs, divisaoFuncao, divisaoValores )
+        function obj = ModeloTreino(id, numCamadas, numNeuronios, funcoesAtivacao, funcaoDeTreino, epochs, divisaoFuncao, divisaoValores )
             if nargin > 0
+                obj.id = id;
                 obj.numCamadas = numCamadas;
                 obj.numNeuronios = numNeuronios;
                 obj.funcoesAtivacao = funcoesAtivacao;
