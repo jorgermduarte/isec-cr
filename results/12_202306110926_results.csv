@@ -1,0 +1,3 @@
+FileName;NumberLayers;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy;Learning Functions;Learning Rate
+model_12_10_9.mat;1;10;tansig purelin;trainbfg;1000;dividerand;0.7;0.15;0.15;10;9.52380952380952;learngdm;0
+Média de ID: 12;1;10;tansig purelin;trainbfg;1000;dividerand;0.7;0.15;0.15;10;9.52380952380952;learngdm;0

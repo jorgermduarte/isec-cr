@@ -1,0 +1,12 @@
+FileName;NumberLayers;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy;Learning Functions;Learning Rate
+model_20_34_6.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;34.7142857142857;6.66666666666667;learngdm;0
+model_20_26_10.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;26.7142857142857;10.4761904761905;learngdm;0
+model_20_24_7.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;24.2857142857143;7.61904761904762;learngdm;0
+model_20_17_12.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;17.7142857142857;12.3809523809524;learngdm;0
+model_20_30_18.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;30.8571428571429;18.0952380952381;learngdm;0
+model_20_11_3.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;11.2857142857143;3.80952380952381;learngdm;0
+model_20_28_10.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;28.1428571428571;10.4761904761905;learngdm;0
+model_20_13_9.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;13.7142857142857;9.52380952380952;learngdm;0
+model_20_14_4.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;14.8571428571429;4.76190476190476;learngdm;0
+model_20_36_16.mat;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;36.4285714285714;16.1904761904762;learngdm;0
+Média de ID: 20;1;10;tansig purelin;traincgb;1000;dividerand;0.7;0.15;0.15;23.8714285714286;10;learngdm;0
