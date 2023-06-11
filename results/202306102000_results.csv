@@ -1,0 +1,12 @@
+FileName;NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+model_51_34_12.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;34.4285714285714;12.3809523809524
+model_51_35_8.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;35.2857142857143;8.57142857142857
+model_51_51_10.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;51.1428571428571;10.4761904761905
+model_51_26_6.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;26.4285714285714;6.66666666666667
+model_51_43_13.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;43.8571428571429;13.3333333333333
+model_51_38_10.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;38.2857142857143;10.4761904761905
+model_51_52_17.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;52.2857142857143;17.1428571428571
+model_51_35_9.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;35.1428571428571;9.52380952380952
+model_51_49_19.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;49.5714285714286;19.047619047619
+model_51_49_16.mat;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;49;16.1904761904762
+Média de ID: 51;1;100;tansig softmax;traingd;1000;dividerand;0.7;0.15;0.15;41.5428571428571;12.3809523809524

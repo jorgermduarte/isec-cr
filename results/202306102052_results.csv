@@ -1,0 +1,5 @@
+FileName;NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+model_903_90_66.mat;2;[500 250];tansig tansig softmax;trainscg;5000;dividerand;0.7;0.15;0.15;90.5714285714286;66.6666666666667
+Média de ID: 903;2;[500 250];tansig tansig softmax;trainscg;5000;dividerand;0.7;0.15;0.15;90.5714285714286;66.6666666666667
+model_911_80_33.mat;2;[500 250];tansig tansig softmax;trainscg;5000;dividerand;0.7;0.15;0.15;80.1428571428571;33.3333333333333
+Média de ID: 911;2;[500 250];tansig tansig softmax;trainscg;5000;dividerand;0.7;0.15;0.15;80.1428571428571;33.3333333333333

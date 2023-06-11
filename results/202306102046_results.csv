@@ -1,0 +1,5 @@
+FileName;NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+model_905_14_11.mat;2;[700 200];poslin poslin softmax;trainscg;5000;dividerand;0.7;0.15;0.15;14;11.4285714285714
+Média de ID: 905;2;[700 200];poslin poslin softmax;trainscg;5000;dividerand;0.7;0.15;0.15;14;11.4285714285714
+model_905_9_6.mat;2;[700 200];poslin poslin softmax;trainscg;5000;dividerand;0.7;0.15;0.15;9.85714285714286;6.66666666666667
+Média de ID: 905;2;[700 200];poslin poslin softmax;trainscg;5000;dividerand;0.7;0.15;0.15;9.85714285714286;6.66666666666667

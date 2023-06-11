@@ -7,19 +7,19 @@ addpath("objects");
 targetFolder = TrainingFolder.train1;
 trainingType = TrainingType.MIX;
 
-% Modelos de treino
+% Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        99, ... % identificador
+        922, ... % identificador
         2, ... % num de camadas escondidas
-        [10 10], ... % num neuronios
-        {'tansig','tansig','softmax'}, ... % funcoes de ativacao
-        'traingd', ... % funcao de treino
+        [450 250], ... % num neuronios
+        {'tansig', 'tansig', 'softmax'}, ... % funcoes de ativacao
+        'trainscg', ... % funcao de treino
         1000, ... % epochs
-        'dividerand', ... %  funcao de divisao
+        'dividerand', ... % funcao de divisao
         {.70, .15, .15}, ... % divisao de valores
-        { 'learngdm', 'learngd' }, ... % funcoes de aprendizagem
-        0.05 ... % taxa de aprendizagem (0 = nao usa)
+        { 'learngdm', 'learngdm'}, ... % funcoes de aprendizagem
+        0.06 ... % taxa de aprendizagem (0 = nao usa)
     )
 ];
 
@@ -91,7 +91,6 @@ disp("Total number of columns (images) in the input matrix: " + size(inputBinary
 disp("Total number of lines (images) in the input: " + size(inputBinaryImages, 1));
 disp("Total number of repetitions per model: " + totalExecutions);
 
-
 % Cria um registo para guardar os resultados
 resultsCell = {};
 
@@ -127,6 +126,9 @@ for i = 1:numel(arrayModelos)
         net.divideParam.valRatio = trainingModel.divisaoValores{2};
         net.divideParam.testRatio = trainingModel.divisaoValores{3};
 
+        % para permitir mais falhas de validação
+        net.trainParam.max_fail = 100; 
+        
         % define as funcoes de aprendizagem
         if ~isempty(trainingModel.funcoesAprendizagem)
             for j = 1:trainingModel.numCamadas
@@ -186,11 +188,11 @@ for i = 1:numel(arrayModelos)
         if ~isfolder(folder)
             mkdir(folder);
         end
-        
+
         modelFileDir = fullfile('models',filename);
         save(modelFileDir, 'net');
 
-        resultsCell(end+1, :) = {filename, trainingModel.numCamadas, mat2str(trainingModel.numNeuronios), strjoin(trainingModel.funcoesAtivacao, ' '), trainingModel.funcaoDeTreino, trainingModel.epochs, trainingModel.divisaoFuncao, trainingModel.divisaoValores{1}, trainingModel.divisaoValores{2}, trainingModel.divisaoValores{3}, accuracy, accuracyTeste};
+        resultsCell(end+1, :) = {filename, trainingModel.numCamadas, mat2str(trainingModel.numNeuronios), strjoin(trainingModel.funcoesAtivacao, ' '), trainingModel.funcaoDeTreino, trainingModel.epochs, trainingModel.divisaoFuncao, trainingModel.divisaoValores{1}, trainingModel.divisaoValores{2}, trainingModel.divisaoValores{3}, accuracy, accuracyTeste, strjoin(trainingModel.funcoesAprendizagem, ' '), trainingModel.taxaAprendizagem};
     end
 
     % Calcula a média dos valores de accuracy e accuracyTeste
@@ -198,7 +200,7 @@ for i = 1:numel(arrayModelos)
     accuracyTeste = mean(accuracyTesteValues);
     mediaText = ['Média de ID: ' num2str(trainingModel.id)];
 
-    resultsCell(end+1, :) = {mediaText, trainingModel.numCamadas, mat2str(trainingModel.numNeuronios), strjoin(trainingModel.funcoesAtivacao, ' '), trainingModel.funcaoDeTreino, trainingModel.epochs, trainingModel.divisaoFuncao, trainingModel.divisaoValores{1}, trainingModel.divisaoValores{2}, trainingModel.divisaoValores{3}, accuracy, accuracyTeste};
+    resultsCell(end+1, :) = {mediaText, trainingModel.numCamadas, mat2str(trainingModel.numNeuronios), strjoin(trainingModel.funcoesAtivacao, ' '), trainingModel.funcaoDeTreino, trainingModel.epochs, trainingModel.divisaoFuncao, trainingModel.divisaoValores{1}, trainingModel.divisaoValores{2}, trainingModel.divisaoValores{3}, accuracy, accuracyTeste, strjoin(trainingModel.funcoesAprendizagem, ' '), trainingModel.taxaAprendizagem};
 
 end
 
@@ -209,9 +211,10 @@ if ~isfolder(resultsFolder)
 end
 
 % Guarda a tabela como um arquivo CSV
-results = cell2table(resultsCell, 'VariableNames', {'FileName' 'NumberLayres', 'NumberNeurons', 'ActivationFunctions', 'TrainingFunction', 'Epochs', 'Division', 'TrainRatio', 'ValRatio', 'TestRatio', 'Accuracy' , 'TestAccuracy'});
+results = cell2table(resultsCell, 'VariableNames', {'FileName' 'NumberLayers', 'NumberNeurons', 'ActivationFunctions', 'TrainingFunction', 'Epochs', 'Division', 'TrainRatio', 'ValRatio', 'TestRatio', 'Accuracy' , 'TestAccuracy', 'Learning Functions', 'Learning Rate'});
 
-filename = fullfile('results', [datestr(now, 'yyyymmddHHMM') '_results.csv']);
+% adicionar no nome do ficheiro o id do modelo
+filename = fullfile('results', [ num2str(arrayModelos(i).id) '_'  datestr(now, 'yyyymmddHHMM') '_results.csv']);
 writetable(results, filename, 'Delimiter', ';', 'WriteMode', 'append');
 
 disp(results);

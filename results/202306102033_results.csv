@@ -1,0 +1,3 @@
+FileName;NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+model_903_81_38.mat;3;[625 200 100];tansig tansig tansing softmax;traingd;2000;dividerand;0.7;0.15;0.15;81.2857142857143;38.0952380952381
+Média de ID: 903;3;[625 200 100];tansig tansig tansing softmax;traingd;2000;dividerand;0.7;0.15;0.15;81.2857142857143;38.0952380952381

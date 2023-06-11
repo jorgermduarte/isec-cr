@@ -1,0 +1,12 @@
+FileName;NumberLayres;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy
+trains/train_3_21_8.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;21.7142857142857;8.57142857142857
+trains/train_3_24_2.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;24.7142857142857;2.85714285714286
+trains/train_3_12_9.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;12.4285714285714;9.52380952380952
+trains/train_3_17_8.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;17;8.57142857142857
+trains/train_3_21_7.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;21.4285714285714;7.61904761904762
+trains/train_3_19_8.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;19.7142857142857;8.57142857142857
+trains/train_3_19_7.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;19;7.61904761904762
+trains/train_3_16_6.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;16.8571428571429;6.66666666666667
+trains/train_3_20_5.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;20;5.71428571428571
+trains/train_3_21_11.mat;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;21.4285714285714;11.4285714285714
+Média de ID: 3;2;[1 10];tansig tansig pureline;trainlm;1000;dividerand;0.7;0.15;0.15;19.4285714285714;7.71428571428571
