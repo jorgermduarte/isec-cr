@@ -4,27 +4,27 @@ addpath("objects");
 
 %  === CONFIGURAÇÕES DO MODELO ===
 
-targetFolder = TrainingFolder.train1;
+targetFolder = TrainingFolder.mix;
 trainingType = TrainingType.MIX;
 
 % Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        923, ... % identificador
+        925, ... % identificador
         2, ... % num de camadas escondidas
-        [450 250], ... % num neuronios
+        [500 250], ... % num neuronios
         {'tansig', 'tansig', 'softmax'}, ... % funcoes de ativacao
-        'trainscg', ... % funcao de treino
-        1000, ... % epochs
+        'trainc', ... % funcao de treino
+        100, ... % epochs
         'dividerand', ... % funcao de divisao
         {.70, .15, .15}, ... % divisao de valores
         { 'learngdm', 'learngdm'}, ... % funcoes de aprendizagem
-        0.06 ... % taxa de aprendizagem (0 = nao usa)
+        0.05 ... % taxa de aprendizagem (0 = nao usa)
     )
 ];
 
 % Num de vezes que vai repetir o modelo e para ajudar na média
-totalExecutions = 1;
+totalExecutions = 10;
 
 % Configuracao de tamanho da imagem (25x25), para ser usado no resize
 % e convertido para um vetor binario na vertical
@@ -133,7 +133,7 @@ for i = 1:numel(arrayModelos)
         net.divideParam.testRatio = trainingModel.divisaoValores{3};
 
         % para permitir mais falhas de validação
-        net.trainParam.max_fail = 100; 
+        net.trainParam.max_fail = 300; 
         
         % define as funcoes de aprendizagem
         if ~isempty(trainingModel.funcoesAprendizagem)

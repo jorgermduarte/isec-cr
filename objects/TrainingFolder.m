@@ -3,5 +3,6 @@ classdef TrainingFolder
         start
         train1
         custom
+        mix
     end
 end
