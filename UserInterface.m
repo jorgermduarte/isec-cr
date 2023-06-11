@@ -61,6 +61,11 @@ function UserInterface
         if isempty(img)
             resultText.Value = 'No image selected or drawn.';
         else
+            % converte a imagem para grayscale caso nao seja
+            if ndims(img) == 3
+                img = rgb2gray(img);
+            end
+            
             % converter imagem para uma matrix binaria
             binaryImg = imbinarize(img);
 
