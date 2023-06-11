@@ -10,7 +10,7 @@ trainingType = TrainingType.MIX;
 % Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        922, ... % identificador
+        923, ... % identificador
         2, ... % num de camadas escondidas
         [450 250], ... % num neuronios
         {'tansig', 'tansig', 'softmax'}, ... % funcoes de ativacao
@@ -72,6 +72,12 @@ for i = 1:numFiles
     % Ler o ficheiro
     fileDir = imds.Files{i};
     img = imread(fileDir);
+
+    %converte a imagem para grayscale caso nao seja
+    if ndims(img) == 3
+        img = rgb2gray(img);
+    end
+    
 
     % Resize da imagem para o tamanho definido
     resizedImg = imresize(img, [imageSize imageSize]);
