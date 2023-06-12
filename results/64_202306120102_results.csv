@@ -1,0 +1,6 @@
+FileName;NumberLayers;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy;Learning Functions;Learning Rate
+model_64_31_8.mat;1;300;tansig softmax;traingd;2000;dividerand;0.7;0.15;0.15;31.1904761904762;8.73015873015873;learngd;0.05
+model_64_39_11.mat;1;300;tansig softmax;traingd;2000;dividerand;0.7;0.15;0.15;39.5238095238095;11.9047619047619;learngd;0.05
+model_64_44_10.mat;1;300;tansig softmax;traingd;2000;dividerand;0.7;0.15;0.15;44.2857142857143;10.3174603174603;learngd;0.05
+model_64_44_12.mat;1;300;tansig softmax;traingd;2000;dividerand;0.7;0.15;0.15;44.6428571428571;12.6984126984127;learngd;0.05
+Média de ID: 64;1;300;tansig softmax;traingd;2000;dividerand;0.7;0.15;0.15;39.9107142857143;10.9126984126984;learngd;0.05
