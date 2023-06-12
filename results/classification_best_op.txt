@@ -1,0 +1,21 @@
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\custom
+Selected training type: OP
+Total number of columns (images) in the input matrix: 20
+Total number of lines (images) in the input: 625
+Model name: model_810_97_90_OP.mat
+Accuracy: 40%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\train1
+Selected training type: OP
+Total number of columns (images) in the input matrix: 200
+Total number of lines (images) in the input: 625
+Model name: model_810_97_90_OP.mat
+Accuracy: 97%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\start
+Selected training type: OP
+Total number of columns (images) in the input matrix: 20
+Total number of lines (images) in the input: 625
+Model name: model_810_97_90_OP.mat
+Accuracy: 70%

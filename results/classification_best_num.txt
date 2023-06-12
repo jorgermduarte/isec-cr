@@ -1,0 +1,22 @@
+
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\custom
+Selected training type: NUM
+Total number of columns (images) in the input matrix: 50
+Total number of lines (images) in the input: 625
+Model name: model_814_96_88_NUM.mat
+Accuracy: 36%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\start
+Selected training type: NUM
+Total number of columns (images) in the input matrix: 50
+Total number of lines (images) in the input: 625
+Model name: model_814_96_88_NUM.mat
+Accuracy: 94%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\train1
+Selected training type: NUM
+Total number of columns (images) in the input matrix: 500
+Total number of lines (images) in the input: 625
+Model name: model_814_96_88_NUM.mat
+Accuracy: 96%

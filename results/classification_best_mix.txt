@@ -1,0 +1,21 @@
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\start
+Selected training type: MIX
+Total number of columns (images) in the input matrix: 70
+Total number of lines (images) in the input: 625
+Model name: model_815_96_83_MIX.mat
+Accuracy: 90%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\custom
+Selected training type: MIX
+Total number of columns (images) in the input matrix: 70
+Total number of lines (images) in the input: 625
+Model name: model_815_96_83_MIX.mat
+Accuracy: 41.4286%
+>> ClassifyTreinedModel
+Loaded folder: data\datasets\train1
+Selected training type: MIX
+Total number of columns (images) in the input matrix: 700
+Total number of lines (images) in the input: 625
+Model name: model_815_96_83_MIX.mat
+Accuracy: 96.4286%
