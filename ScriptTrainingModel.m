@@ -10,15 +10,15 @@ trainingType = TrainingType.NUM;
 % Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        813, ... % identificador
-        2, ... % num de camadas escondidas
-        [100 100], ... % num neuronios
-        {'tansig','tansig', 'softmax'}, ... % funcoes de ativacao
-        'traingd', ... % funcao de treino
+        814, ... % identificador
+        5, ... % num de camadas escondidas
+        [100 100 75 75 75], ... % num neuronios
+        {'tansig','tansig','tansig','tansig','tansig', 'softmax'}, ... % funcoes de ativacao
+        'trainscg', ... % funcao de treino
         1000, ... % epochs
         'dividerand', ... % funcao de divisao
         {.70, .15, .15}, ... % divisao de valores
-        { 'learngdm', 'learngdm'}, ... % funcoes de aprendizagem
+        { 'learngdm', 'learngdm','learngdm','learngdm','learngdm'}, ... % funcoes de aprendizagem
         0.05 ... % taxa de aprendizagem (0 = nao usa)
     )
 ];
