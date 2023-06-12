@@ -1,0 +1,12 @@
+FileName;NumberLayers;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy;Learning Functions;Learning Rate
+model_802_53_9.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;53.4285714285714;9.52380952380952;learngdm;0.05
+model_802_77_24.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;77.4285714285714;24.7619047619048;learngdm;0.05
+model_802_47_11.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;47.4285714285714;11.4285714285714;learngdm;0.05
+model_802_51_13.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;51.4285714285714;13.3333333333333;learngdm;0.05
+model_802_61_17.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;61.1428571428571;17.1428571428571;learngdm;0.05
+model_802_47_13.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;47;13.3333333333333;learngdm;0.05
+model_802_48_6.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;48.2857142857143;6.66666666666667;learngdm;0.05
+model_802_29_7.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;29.7142857142857;7.61904761904762;learngdm;0.05
+model_802_64_13.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;64.8571428571429;13.3333333333333;learngdm;0.05
+model_802_48_15.mat;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;48.1428571428571;15.2380952380952;learngdm;0.05
+Média de ID: 802;1;100;tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;52.8857142857143;13.2380952380952;learngdm;0.05
