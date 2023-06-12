@@ -5,20 +5,20 @@ addpath("objects");
 %  === CONFIGURAÇÕES DO MODELO ===
 
 targetFolder = TrainingFolder.train1;
-trainingType = TrainingType.OP;
+trainingType = TrainingType.NUM;
 
 % Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        810, ... % identificador
-        1, ... % num de camadas escondidas
-        [50], ... % num neuronios
-        {'tansig', 'softmax'}, ... % funcoes de ativacao
+        813, ... % identificador
+        2, ... % num de camadas escondidas
+        [100 100], ... % num neuronios
+        {'tansig','tansig', 'softmax'}, ... % funcoes de ativacao
         'traingd', ... % funcao de treino
         1000, ... % epochs
         'dividerand', ... % funcao de divisao
         {.70, .15, .15}, ... % divisao de valores
-        { 'learngdm'}, ... % funcoes de aprendizagem
+        { 'learngdm', 'learngdm'}, ... % funcoes de aprendizagem
         0.05 ... % taxa de aprendizagem (0 = nao usa)
     )
 ];
