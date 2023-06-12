@@ -2,7 +2,8 @@ function UserInterface
 
     categories = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'add', 'sub', 'mul', 'div'};
 
-    defaultModel = "model_69_95_80_MIX.mat";
+    defaultModel = "model_815_96_83_MIX.mat";
+
 
     % Criar a interface gráfica
     fig = uifigure('Name', 'Simple Calculator', 'Position', [300 300 500 400]);
@@ -11,30 +12,41 @@ function UserInterface
     trainedNet = load('models/' + defaultModel);
     net = trainedNet.net;
     
+
+    % Adicionar botões de rádio para selecionar categories
+    categoryButtonGroup = uibuttongroup(fig, 'Position', [10 120 130 130], 'Title', 'Categories', 'SelectionChangedFcn', @changeCategories);
+    uiradiobutton(categoryButtonGroup, 'Text', 'All', 'Position', [10 70 80 20], 'UserData', {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'add', 'sub', 'mul', 'div'});
+    uiradiobutton(categoryButtonGroup, 'Text', 'Numbers', 'Position', [10 40 80 20], 'UserData', {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'});
+    uiradiobutton(categoryButtonGroup, 'Text', 'Operations', 'Position', [10 10 80 20], 'UserData', {'add', 'sub', 'mul', 'div'});
+
+
     % Adicionar texto para mostrar o modelo de rede atual
-    modelLabel = uilabel(fig, 'Text', 'Current model: ' + defaultModel , 'Position', [10 365 200 20]);
+    modelLabel = uilabel(fig, 'Text', 'Current model: ' + defaultModel , 'Position', [10 345 300 20]);
+
+    categoriesLabel = uilabel(fig, 'Text', ['Current categories: ' + string(strjoin(categories,','))], 'Position', [10 365 300 20]);
+
     
     % Adicionar botão para carregar outro modelo
     loadModelButton = uibutton(fig, 'push', 'Text', 'Load Model', ...
-        'Position', [250 360 100 30], 'ButtonPushedFcn', @loadModel);
+        'Position', [10 300 100 30], 'ButtonPushedFcn', @loadModel);
 
     % Adicionar botão para selecionar imagem
     selectImageButton = uibutton(fig, 'push', 'Text', 'Select Image', ...
-        'Position', [10 320 100 30], 'ButtonPushedFcn', @selectImage);
+        'Position', [10 260 100 30], 'ButtonPushedFcn', @selectImage);
 
     % Adicionar área de visualização de imagem
-    imgAx = uiaxes(fig, 'Position', [150 150 200 200]);
+    imgAx = uiaxes(fig, 'Position', [150 135 200 200]);
 
     % Adicionar botão para identificar números e símbolos na imagem
     identifyButton = uibutton(fig, 'push', 'Text', 'Identify', ...
-        'Position', [390 170 100 30], 'ButtonPushedFcn', @identifyExpression);
+        'Position', [390 160 100 30], 'ButtonPushedFcn', @identifyExpression);
 
     % Adicionar botão para desenhar uma imagem
     drawButton = uibutton(fig, 'push', 'Text', 'Draw Image', ...
-        'Position', [390 230 100 30], 'ButtonPushedFcn', @drawImage);
+        'Position', [390 240 100 30], 'ButtonPushedFcn', @drawImage);
 
     % Adicionar área de texto para exibir resultado
-    resultText = uitextarea(fig, 'Position', [100 50 300 50], 'Editable', 'off');
+    resultText = uitextarea(fig, 'Position', [10 50 350 50], 'Editable', 'off');
 
     img = [];  % Imagem atual
 
@@ -55,6 +67,11 @@ function UserInterface
             img = imread(fullfile(path, file));
             imshow(img, 'Parent', imgAx);
         end
+    end
+
+    function changeCategories(src, event)
+        categories = event.NewValue.UserData;
+        categoriesLabel.Text = sprintf("Current Categories: %s", string(strjoin(categories,',')) )
     end
 
     function identifyExpression(src, event)
@@ -120,10 +137,11 @@ function UserInterface
                 x = round(cp(1, 1));
                 y = round(cp(1, 2));
                 
+                raio = 10;
                 % Desenhar um círculo preto com raio de 5 pixels
-                for dx = -5:5
-                    for dy = -5:5
-                        if dx^2 + dy^2 <= 5^2
+                for dx = -raio:raio
+                    for dy = -raio:raio
+                        if dx^2 + dy^2 <= raio^2
                             ix = x + dx;
                             iy = y + dy;
                             if ix > 0 && ix <= 150 && iy > 0 && iy <= 150

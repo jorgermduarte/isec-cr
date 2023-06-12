@@ -9,6 +9,7 @@
     [x] No relatório mostre os resultados obtidos e registe as conclusões mais relevantes.
 
 [ ] UI:
-    [ ] Ser possivel desenhar expressões matemáticas na UI
+    [ ] Ser possível desenhar expressões matemáticas na UI
     [ ] Usar a(s) rede(s) neuronal(ais) carregada(s) para classificar os três componentes da expressão
+
 [ ] Elabore um relatório do trabalho realizado
