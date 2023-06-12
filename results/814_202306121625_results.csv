@@ -1,0 +1,32 @@
+FileName;NumberLayers;NumberNeurons;ActivationFunctions;TrainingFunction;Epochs;Division;TrainRatio;ValRatio;TestRatio;Accuracy;TestAccuracy;Learning Functions;Learning Rate
+model_814_94_72.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.4;72;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_76.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.6;76;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_93_81.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;93.8;81.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_77.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.4;77.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_65.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94;65.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_73.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95;73.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_77.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95;77.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_76.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.8;76;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_93_61.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;93.8;61.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_80.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95.2;80;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_74.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95.8;74.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_81.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95;81.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_73.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.4;73.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_68.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.2;68;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_82.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95;82.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_82.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95.4;82.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_93_77.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;93.2;77.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_70.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95;70.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_93_66.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;93.8;66.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_65.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94;65.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_84.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94;84;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_95_70.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;95.2;70.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_77.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.2;77.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_76.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.2;76;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_80.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.6;80;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_74.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.4;74.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_94_66.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94;66.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_96_74.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;96;74.6666666666667;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_93_61.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;93.6;61.3333333333333;learngdm learngdm learngdm learngdm learngdm;0.05
+model_814_92_68.mat;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;92.4;68;learngdm learngdm learngdm learngdm learngdm;0.05
+Média de ID: 814;5;[100 100 75 75 75];tansig tansig tansig tansig tansig softmax;trainscg;1000;dividerand;0.7;0.15;0.15;94.4466666666667;73.8666666666667;learngdm learngdm learngdm learngdm learngdm;0.05

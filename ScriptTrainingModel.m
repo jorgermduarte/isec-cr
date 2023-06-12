@@ -5,17 +5,17 @@ addpath("objects");
 %  === CONFIGURAÇÕES DO MODELO ===
 
 targetFolder = TrainingFolder.train1;
-trainingType = TrainingType.NUM;
+trainingType = TrainingType.MIX;
 
 % Modelos de trein
 arrayModelos = [
     TrainingModel( ...
-        814, ... % identificador
+        815, ... % identificador
         5, ... % num de camadas escondidas
         [100 100 75 75 75], ... % num neuronios
         {'tansig','tansig','tansig','tansig','tansig', 'softmax'}, ... % funcoes de ativacao
         'trainscg', ... % funcao de treino
-        1000, ... % epochs
+        2000, ... % epochs
         'dividerand', ... % funcao de divisao
         {.70, .15, .15}, ... % divisao de valores
         { 'learngdm', 'learngdm','learngdm','learngdm','learngdm'}, ... % funcoes de aprendizagem
@@ -133,7 +133,7 @@ for i = 1:numel(arrayModelos)
         net.divideParam.testRatio = trainingModel.divisaoValores{3};
 
         % para permitir mais falhas de validação
-        net.trainParam.max_fail = 50; 
+        net.trainParam.max_fail = 75; 
         
         % define as funcoes de aprendizagem
         if ~isempty(trainingModel.funcoesAprendizagem)
