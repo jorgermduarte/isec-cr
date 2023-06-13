@@ -98,7 +98,7 @@ function UserInterface
             endSegments = find(transitions == 1) - 1;
             
             % remover os segmentos que contêm apenas espaços brancos
-            minSegmentWidth = 1; 
+            minSegmentWidth = 1;  % ajuste este valor conforme necessário
             validSegments = (endSegments - beginSegments) >= minSegmentWidth;
             beginSegments = beginSegments(validSegments);
             endSegments = endSegments(validSegments);
@@ -113,16 +113,18 @@ function UserInterface
                 resizedSegment = imresize(segment, [25 25]);
 
                 % Cria um novo uiaxes e mostra a imagem redimensionada
-                % Ajusta a posição e o tamanho do uiaxes conforme necessário
+                % Ajuste a posição e o tamanho do uiaxes conforme necessário
                 %segmentAxes = uiaxes(fig, 'Position', [450 + (i-1)*30, 50, 25, 25]);
                 %imshow(resizedSegment, 'Parent', segmentAxes);
                 %uistack(segmentAxes, 'bottom');
 
-                % converte a matriz para uma matriz vertical e coloca num array 3D
+
+                % converter a matriz para uma matriz vertical e coloca-la num array 3D
                 inputMatrixVertical = resizedSegment(:);
                 inputArray3D = zeros(1, 1, numel(inputMatrixVertical));
                 inputArray3D(1,1,:) = inputMatrixVertical;
             
+    
                 % envia imagem para a rede neural e retorna o resultado da classificação
                 outputMatrix = net(inputMatrixVertical);
     
@@ -133,7 +135,7 @@ function UserInterface
             end
     
             % exibe o resultado
-            resultText.Value = sprintf('Identified expression: %s\nResult: ?', strjoin(results, ' '));
+            resultText.Value = sprintf('Identified expression: %s', strjoin(results, ' '));
         end
     end
 
