@@ -74,7 +74,6 @@ function UserInterface
     end
 
     
-    
     function verifyExpression(src, event)
         if isempty(img)
             resultText.Value = 'No image selected or drawn.';
@@ -109,15 +108,18 @@ function UserInterface
             % iterar sobre cada segmento, redimensionar para 150x150 e enviar para a rede neural para identificação
             for i = 1:length(beginSegments)
                 segment = binaryImg(:, beginSegments(i):endSegments(i));
-
-                resizedSegment = imresize(segment, [25 25]);
-
+    
+                resizedSegment = imresize(segment, [23 23]);
+    
+                % Em seguida, adicionamos uma borda branca ao redor da imagem
+                resizedSegment = padarray(resizedSegment, [1 1], 1, 'both');
+    
                 % Cria um novo uiaxes e mostra a imagem redimensionada
                 % Ajusta a posição e o tamanho do uiaxes conforme necessário
                 %segmentAxes = uiaxes(fig, 'Position', [450 + (i-1)*30, 50, 25, 25]);
                 %imshow(resizedSegment, 'Parent', segmentAxes);
                 %uistack(segmentAxes, 'bottom');
-
+    
                 % converte a matriz para uma matriz vertical e coloca num array 3D
                 inputMatrixVertical = resizedSegment(:);
                 inputArray3D = zeros(1, 1, numel(inputMatrixVertical));
@@ -128,12 +130,25 @@ function UserInterface
     
                 [~, result] = max(outputMatrix);
                 disp(" :Identified -> " + categories{result});
-
+    
                 results = [results, categories{result}];
             end
     
-            % exibe o resultado
-            resultText.Value = sprintf('Identified expression: %s\nResult: ?', strjoin(results, ' '));
+            % Convert operation symbols to MATLAB operators
+            expression = strjoin(results, ' ');
+            expression = strrep(expression, 'add', '+');
+            expression = strrep(expression, 'sub', '-');
+            expression = strrep(expression, 'mul', '*');
+            expression = strrep(expression, 'div', '/');
+            
+            try
+                % Try to compute the expression
+                result = eval(expression);
+                resultText.Value = sprintf('Identified expression: %s\nResult: %f', expression, result);
+            catch
+                % If an error occurred, display error message
+                resultText.Value = sprintf('Identified expression: %s\nError in expression', expression);
+            end
         end
     end
 
